@@ -235,7 +235,8 @@ class GameWindow(pyglet.window.Window):
             self.intro_video.pause()
             for space in self.space_list:
                 space.draw()
-            self.player.draw()
+            if self.player_is_alive:
+                self.player.draw()
             for enemy in self.enemies_list:
                 enemy.draw()
             self.main_batch.draw()
